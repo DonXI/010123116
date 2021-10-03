@@ -3,12 +3,12 @@ Feature: User can manually add movie
 Background: Start from the Search form on the home page
   Given I am on the RottenPotatoes home page
 
-@omniauth_test_success
 Scenario: Add a movie (sad path)
   When I follow "Add new movie"
   Then I should see "You have to login first!!!"
   And I should be on the RottenPotatoes home page
-  
+
+@omniauth_test_success
 Scenario: Add a movie (happy path)
   When I should see "Sign in with Facebook"
   And I follow "Sign in with Facebook"
