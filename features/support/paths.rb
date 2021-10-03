@@ -35,7 +35,10 @@ module NavigationHelpers
 
     when /^the Review new page/
       "/movies/#{Movie.last.id}/reviews/new"
-
+      
+    when /^the Details about (.+)/
+      "/movies/#{Movie.last.id}"
+      
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #
