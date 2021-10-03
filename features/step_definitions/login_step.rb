@@ -1,3 +1,4 @@
+# ref: https://stackoverflow.com/questions/5331045/testing-a-web-applications-facebook-integration-with-cucumber?fbclid=IwAR2AT0Dj3dt9MG18bYQScSTHA-ED8M9GVdEtELR6F4pz6i8V52vSt7oZVgI
 #Config Success case:
 Before('@omniauth_test_success') do
     OmniAuth.config.test_mode = true
