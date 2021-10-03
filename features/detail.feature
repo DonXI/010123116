@@ -1,8 +1,10 @@
 Feature: User can manually see detail movie
 
-Background: Start from the Search form on the home page
-  Given I am on the RottenPotatoes home page
-
 Scenario: See detail a movie
-  When I follow "More about this"
+  Given I am on the Aladdin page
+  Then I should see "Delete"
+  And I should see "Details about Aladdin"
+  And I should see "Description:"
   
+  When I follow "Back to movie list"
+  Then I should be on the RottenPotatoes home page

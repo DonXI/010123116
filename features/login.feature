@@ -1,13 +1,16 @@
 Feature: User can manually add movie
  
-Scenario: Add a movie
-  Given I am on the RottenPotatoes home page
-  
-  When I follow "Add new movie"
-  Then I should see "You have to login first!!!"
 
-  When I follow "Sign in with Facebook"
-  Then I should see "Successfully authenticated from Facebook account."
-  When I follow "Add new movie"
-  Then I should be on the Create New Movie page
-  
+@omniauth_test_success
+Scenario: A user successfully signs in with Facebook
+    Given I am on the RottenPotatoes home page
+    When I follow "Sign in with Facebook"
+    
+    Then I should see "Successfully authenticated from Facebook account."
+
+@omniauth_test_failure
+Scenario: A user unsuccessfully signs in with Facebook
+    Given I am on the RottenPotatoes home page
+    And I follow "Sign in with Facebook"
+    Then I should be on the RottenPotatoes home page
+    And I should see "You must be logged in with Facebook before."

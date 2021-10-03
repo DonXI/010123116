@@ -15,10 +15,26 @@ module NavigationHelpers
 
     when /^the home\s?page$/
       '/'
+
     when /^the RottenPotatoes home page/
       '/movies'  
+
     when /^the Create New Movie page/
       '/movies/new' 
+
+    when /^the Search TMDb page/
+      '/movies/search_tmdb' 
+
+    when /^Sign in with Feacbook/
+      '/users/auth/facebook/callback'
+
+    when /^the Aladdin page/
+      '/movies/1'
+
+    when /^Edit Info/
+      "/movies/#{Movie.last.id}/edit"
+
+    
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:

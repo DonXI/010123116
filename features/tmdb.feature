@@ -11,15 +11,16 @@ Background: Start from the Search form on the home page
  
 Scenario: Try to add nonexistent movie (sad path)
  
-  When I fill in "Search Terms" with "Movie That Does Not Exist"
+  Given I am on the RottenPotatoes home page
+  Then I should see "Search TMDB for a movie"
+  When I fill in "search_tmdb" with "Movie That Does Not Exist"
   And I press "Search TMDb"
-  Then I should be on the RottenPotatoes home page
-  And I should see "'Movie That Does Not Exist' was not found in TMDb."
+  Then I should see "Sorry, No match for 'Movie That Does Not Exist'"
  
 Scenario: Try to add existing movie (happy path)
- 
-  When I fill in "Search Terms" with "Inception"
+
+  When I fill in "search_tmdb" with "Inception"
   And I press "Search TMDb"
-  Then I should be on the "Search Results" page
+  Then I should be on the Search TMDb page
   And I should not see "not found"
   And I should see "Inception"
