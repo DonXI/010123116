@@ -10,6 +10,8 @@ module NavigationHelpers
   #
   # step definition in web_steps.rb
   #
+ @movie = Movie.create!(:title => 'test', :rating =>'G', :release_date=>"2017-04-12", :description=>'')
+
   def path_to(page_name)
     case page_name
 
@@ -31,10 +33,6 @@ module NavigationHelpers
     when /^the Aladdin page/
       '/movies/1'
 
-    when /^Edit Info/
-      "/movies/#{Movie.last.id}/edit"
-
-    
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
