@@ -33,6 +33,8 @@ module NavigationHelpers
     when /^the Aladdin page/
       '/movies/1'
 
+    when /^the Review new page/
+      "/movies/#{Movie.last.id}/reviews/new"
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
